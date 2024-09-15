@@ -199,6 +199,7 @@ def get_product_data(food_item, state):
         for row in reader:
             item_name_modified = food_item.replace(" ", "%20")
             item_name_modified = item_name_modified.replace(",", "%2C")
+            real_item_name = row['item_name'].replace("%20", " ")
         
             if row['item_group'] == '1':
 
@@ -206,7 +207,7 @@ def get_product_data(food_item, state):
 
 
                     product_data = {
-                        'name': row['item_name'],
+                        'name': real_item_name,
                         'state': row['state'],
                         'price': row['latest_price'],
                         'price_change': row.get('price_change', 'N/A'),  # Add price change if available
@@ -222,7 +223,7 @@ def get_product_data(food_item, state):
 
                 if row['item_name'].lower() == food_item.lower() and row['state'].lower() == state.lower():
                     product_data = {
-                        'name': row['item_name'],
+                        'name': real_item_name,
                         'state': row['state'],
                         'price': row['latest_price'],
                         'price_change': row.get('price_change', 'N/A'),  # Add price change if available
