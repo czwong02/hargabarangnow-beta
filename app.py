@@ -261,7 +261,7 @@ def get_product_data(food_item, state):
                             food_item, state
                         ),  # Add logic for unusual prices if available
                         "future_trend_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/raw%20food/prediction/{item_name_modified}/prediction_{state}.png",
-                        "unusual_trend_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/raw%20food/anomaly/{item_name_modified}/anomalies_Johor.png",
+                        "unusual_trend_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/raw%20food/anomaly/{item_name_modified}/anomalies_{state}.png",
                         "price_comparison_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/raw%20food/average%20price/{item_name_modified}.png",
                     }
                     break
