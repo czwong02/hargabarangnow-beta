@@ -199,15 +199,13 @@ def get_product_data(food_item, state):
         for row in reader:
             item_name_modified = food_item.replace(" ", "%20")
             item_name_modified = item_name_modified.replace(",", "%2C")
-            real_item_name = row['item_name'].replace("%20", " ")
         
             if row['item_group'] == '1':
 
                 if row['item_name'].lower() == food_item.lower() and row['state'].lower() == state.lower():
 
-
                     product_data = {
-                        'name': real_item_name,
+                        'name': row['item_name'],
                         'state': row['state'],
                         'price': row['latest_price'],
                         'price_change': row.get('price_change', 'N/A'),  # Add price change if available
@@ -223,7 +221,7 @@ def get_product_data(food_item, state):
 
                 if row['item_name'].lower() == food_item.lower() and row['state'].lower() == state.lower():
                     product_data = {
-                        'name': real_item_name,
+                        'name': row['item_name'],
                         'state': row['state'],
                         'price': row['latest_price'],
                         'price_change': row.get('price_change', 'N/A'),  # Add price change if available
@@ -232,7 +230,7 @@ def get_product_data(food_item, state):
                         'unusual_prices': get_processed_unusual_prices(food_item, state),  # Add logic for unusual prices if available
                         'future_trend_chart': f'https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/processed%20food/prediction/{item_name_modified}/prediction_{state}.png',
                         'unusual_trend_chart': f'https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/processed%20food/anomaly/{item_name_modified}/anomalies_{state}.png',
-                        'price_comparison_chart': f'model/processed food/average price/{food_item}.png',
+                        'price_comparison_chart': f'https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/processed%20food/average%20price/{item_name_modified}.png',
                     }
                     break
     
