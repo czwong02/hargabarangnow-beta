@@ -135,9 +135,9 @@ def index():
     processed_food_items = select_unique_items(processed_food_items)
 
     # Remove the 5-item limit for all_unique_items
-    all_unique_items = [
-        item_data for item_data in raw_food_items + processed_food_items
-    ]
+    all_unique_items = list(
+        set([item["item"] for item in raw_food_items + processed_food_items])
+    )
 
     # Render the HTML page with both processed items and percentage increments
     return render_template(
