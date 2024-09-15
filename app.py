@@ -116,7 +116,6 @@ def index():
         # Group items by their names and premises
         for item_data in item_list:
             item_name = item_data["item"]
-            premise = item_data["premise"]
             grouped_by_item[item_name].append(item_data)
 
         # For each item, select up to 5 unique items with different premises
@@ -129,15 +128,15 @@ def index():
             )
 
         return selected_items
+    
+    all_unique_items = list(
+        set([item["item"] for item in raw_food_items + processed_food_items])
+    )
 
     # Select random 5 items with unique premises for itemAll, raw_food_items, and processed_food_items
     itemAll = select_unique_items(itemAll)
     raw_food_items = select_unique_items(raw_food_items)
     processed_food_items = select_unique_items(processed_food_items)
-
-    all_unique_items = list(
-        set([item["item"] for item in raw_food_items + processed_food_items])
-    )
 
     # Render the HTML page with both processed items and percentage increments
     return render_template(

@@ -261,14 +261,19 @@
                 <h2 id="state-name">
                     {{ product['state'] }}
                     <span
-                        style="color: {% if product['price_change']|float < 0 %}red{% else %}rgb(74, 201, 74){% endif %};">
-                        ({{ product['price_change'] | float | round(2) }}%)
+                        style="color: {% if product['price_change']|float|round(2) < 0 %}red
+                                    {% elif product['price_change']|float|round(2) > 0 %}rgb(74, 201, 74)
+                                    {% else %}grey{% endif %};">
+                        ({% if product['price_change']|float|round(2) > 0 %}+{% else %}{% endif %}
+                        {{ product['price_change'] | float | round(2) }}%)
                     </span>
                 </h2>
             </div>
             <div>
                 <h1 id="price"
-                    style="color: {% if product['price_change']|float < 0 %}red{% else %}rgb(74, 201, 74){% endif %};">
+                    style="color: {% if product['price_change']|float|round(2) < 0 %}red
+                                {% elif product['price_change']|float|round(2) > 0 %}rgb(74, 201, 74)
+                                {% else %}grey{% endif %};">
                     RM{{ product['price'] | float | round(2) }}</h1>
             </div>
         </header>
@@ -391,6 +396,7 @@
             var state = document.getElementById("state").value;
             window.location.href = "/product/{{ product['name'] }}/" + state;
         }
+
     </script>
 </body>
 

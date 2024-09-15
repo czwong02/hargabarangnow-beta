@@ -223,6 +223,20 @@
         window.onload = function () {
             startAutoSlide();
         }
+        
+        function clearFilter() {
+            // Reset the dropdown select box to its default value (empty)
+            document.getElementById('itemSelectBox').value = "";
+
+            // Show all items in each tab
+            var tabContents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                var items = tabContents[i].getElementsByClassName('food-list');
+                for (var j = 0; j < items.length; j++) {
+                    items[j].classList.remove('hidden');  // Make all items visible
+                }
+            }
+        }
 
         function openTab(evt, tabName) {
             // Hide all tab-content elements
@@ -240,6 +254,9 @@
             // Show the selected tab's content and add active class to the clicked tab link
             document.getElementById(tabName).classList.add('active');
             evt.currentTarget.classList.add('active');
+
+            // Clear the dropdown filter
+            clearFilter();
         }
 
         function filterItemsBySelect() {
