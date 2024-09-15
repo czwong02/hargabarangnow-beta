@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import csv
 import random
 from collections import defaultdict
+from urllib.parse import unquote
 
 app = Flask(__name__)
 
@@ -216,6 +217,10 @@ def dataset():
 
 @app.route("/product/<food_item>/<state>")
 def product_details(food_item, state):
+    # Decode URL-encoded parameters to ensure they are properly decoded
+    food_item = unquote(food_item)
+    state = unquote(state)
+
     # Example data retrieval from database or API
     product_data = get_product_data(food_item, state)
 
