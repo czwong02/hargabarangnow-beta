@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo Section -->
+        <div class="navbar-logo">
+            <img src="{{ url_for('static', filename='img/logo.jpg') }}">
+            <h1 style="color: black;">HargaBarangNow 2.0</h1>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="" class="nav-link active">Item</a></li>
+                <li><a href="{{ url_for('dataset') }}" class="nav-link">Dataset</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+            </ul>
+
+        </nav>
+
+        <section id="trending" class="trending">
+            <h2>Raw Food</h2>
+            <div class="trend-container">
+                {% for item in raw_items %}
+                <div class="trend-card">
+                    <h3>{{ item['name'] }}</h3>
+                    <a href="{{ item['url'] }}" style="text-decoration: none; color: inherit;">
+
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- View More/Show Less Button -->
+            <div class="view-more-container">
+                {% if raw_show_all %}
+                <a href="{{ url_for('item', raw_show_all='false', processed_show_all=processed_show_all) }}"
+                    class="view-more-button">
+                    <i class="fa fa-chevron-up"></i> <!-- Icon for Show Less -->
+                </a>
+                {% else %}
+                <a href="{{ url_for('item', raw_show_all='true', processed_show_all=processed_show_all) }}"
+                    class="view-more-button">
+                    <i class="fa fa-chevron-down"></i> <!-- Icon for View More -->
+                </a>
+                {% endif %}
+            </div>
+        </section>
+
+        <section id="trending" class="trending">
+            <h2>Processed Food</h2>
+            <div class="trend-container">
+                {% for item in processed_items %}
+                <div class="trend-card">
+                    <h3>{{ item['name'] }}</h3>
+                    <a href="{{ item['url'] }}" style="text-decoration: none; color: inherit;">
+
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- View More/Show Less Button -->
+            <div class="view-more-container">
+                {% if processed_show_all %}
+                <a href="{{ url_for('item', processed_show_all='false', raw_show_all=raw_show_all) }}"
+                    class="view-more-button">
+                    <i class="fa fa-chevron-up"></i> <!-- Icon for Show Less -->
+                </a>
+                {% else %}
+                <a href="{{ url_for('item', processed_show_all='true', raw_show_all=raw_show_all) }}"
+                    class="view-more-button">
+                    <i class="fa fa-chevron-down"></i> <!-- Icon for View More -->
+                </a>
+                {% endif %}
+            </div>
+        </section>
+
+</body>
+
+<footer>
+    <p class="update-info">Last updated: August 26, 2024</p>
+</footer>
+
+<script>
+    function toggleItems() {
+        var expandedItems = document.getElementById('expandedItems');
+        var viewMoreButton = document.getElementById('viewMoreButton');
+
+        if (expandedItems.style.display === "none") {
+            expandedItems.style.display = "block";
+            viewMoreButton.innerHTML = '<i class="fa fa-chevron-up"></i>'; // Change icon to 'up' arrow
+        } else {
+            expandedItems.style.display = "none";
+            viewMoreButton.innerHTML = '<i class="fa fa-chevron-down"></i>'; // Change icon to 'down' arrow
+        }
+    }
+</script>
+
+</html>

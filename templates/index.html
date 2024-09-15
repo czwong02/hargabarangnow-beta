@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo Section -->
+        <div class="navbar-logo">
+            <img src="{{ url_for('static', filename='img/logo.jpg') }}">
+            <h1 style="color: black;">HargaBarangNow 2.0</h1>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="" class="nav-link active">Home</a></li>
+                <li><a href="{{ url_for('item') }}" class="nav-link">Item</a></li>
+                <li><a href="{{ url_for('dataset') }}" class="nav-link">Dataset</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+            </ul>
+            <!-- Day/Night Mode Toggle -->
+            <!-- <div class="toggle-container">
+                <i id="toggle-icon" class="fa-light fa-lightbulb" onclick="toggleMode()"></i>
+            </div> -->
+        </nav>
+
+        <h2>Marketplace</h2>
+
+        <div class="slider-container">
+            <button class="slider-button left" onclick="scrollSlider(-1)">&#10094;</button>
+            <section id="marketplace" class="marketplace">
+                {% for item in items %}
+                <div class="item-card">
+                    <h2>{{ item['item_name'] }}</h2>
+                    <h3 class="price" style="color: green">RM{{ item['state'][0][1] | float | round(2) }}</h3>
+                    <ul>
+                        {% for state, state_price in item['state'] %}
+                        <li>{{ state }}: RM{{ state_price | float | round(2) }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </section>
+            <button class="slider-button right" onclick="scrollSlider(1)">&#10095;</button>
+        </div>
+
+        <section id="trending" class="trending">
+            <h2>Trending</h2>
+            <div class="trend-container">
+                <div class="trend-card">
+                    <a href="/product/AYAM%20BERSIH%20-%20STANDARD/Johor"
+                        style="text-decoration: none; color: inherit;">
+                        <h3>AYAM BERSIH - STANDARD</h3>
+                        <p class="price-decrease">{{increments['AYAM BERSIH - STANDARD'] | float | round(2)}}% <i
+                                class="fas fa-arrow-down"></i></p> <!-- Green arrow for increase -->
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+                <div class="trend-card">
+                    <a href="/product/BAWANG%20BESAR%20IMPORT%20(INDIA)/Johor"
+                        style="text-decoration: none; color: inherit;">
+                        <h3>BAWANG BESAR IMPORT (INDIA)</h3>
+                        <p class="price-decrease">{{increments['BAWANG BESAR IMPORT (INDIA)'] | float | round(2)}}% <i
+                                class="fas fa-arrow-down"></i></p> <!-- Green arrow for increase -->
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+                <div class="trend-card">
+                    <a href="/product/CILI%20KERING%20KERINTING%20(BERTANGKAI%20OR%20TIDAK%20BERTANGKAI)/Johor"
+                        style="text-decoration: none; color: inherit;">
+                        <h3>CILI KERING KERINTING (BERTANGKAI OR TIDAK BERTANGKAI)
+                        </h3>
+                        <p class="price-increase">{{increments['CILI KERING KERINTING (BERTANGKAI OR TIDAK BERTANGKAI)']
+                            | float | round(2)}}% <i class="fas fa-arrow-up"></i></p> <!-- Green arrow for increase -->
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+                <div class="trend-card">
+                    <a href="/product/TELUR%20AYAM%20GRED%20A/Johor" style="text-decoration: none; color: inherit;">
+
+                        <h3>TELUR AYAM GRED A</h3>
+                        <p class="price-decrease">{{increments['TELUR AYAM GRED A'] | float | round(2)}}% <i
+                                class="fas fa-arrow-down"></i></p> <!-- Red arrow for decrease -->
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+                <div class="trend-card">
+                    <a href="/product/SANTAN%20KELAPA%20SEGAR%20(PEKAT)/Johor"
+                        style="text-decoration: none; color: inherit;">
+
+                        <h3>SANTAN KELAPA SEGAR (PEKAT)
+                        </h3>
+                        <p class="price-increase">{{increments['SANTAN KELAPA SEGAR (PEKAT)'] | float | round(2)}}% <i
+                                class="fas fa-arrow-up"></i></p> <!-- Red arrow for decrease -->
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+                <div class="trend-card">
+                    <a href="/product/IKAN%20KEMBUNG%20(ANTARA%208%20HINGGA%2012%20EKOR%20SEKILOGRAM)/Johor"
+                        style="text-decoration: none; color: inherit;">
+                        <h3>IKAN KEMBUNG (ANTARA 8 HINGGA 12 EKOR SEKILOGRAM)</h3>
+                        <p class="price-decrease">{{increments['IKAN KEMBUNG (ANTARA 8 HINGGA 12 EKOR SEKILOGRAM)'] |
+                            float | round(2)}}% <i class="fas fa-arrow-down"></i></p> <!-- Red arrow for decrease -->
+                        <button>Watch Market</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="food-items" class="food-items">
+            <h2>Food Items</h2>
+
+            <!-- Container for Tabs and Search Bar -->
+            <div class="tab-search-container">
+                <!-- Tab Links -->
+                <div class="tabs">
+                    <button class="tab-link active" onclick="openTab(event, 'All')">All</button>
+                    <button class="tab-link" onclick="openTab(event, 'RawFood')">Raw Food</button>
+                    <button class="tab-link" onclick="openTab(event, 'ProcessedFood')">Processed Food</button>
+                </div>
+
+                <!-- Select Box -->
+                <select id="itemSelectBox" class="select-box" onchange="filterItemsBySelect()">
+                    <option value="">Select an item</option>
+                    {% for item in all_unique_items %}
+                    <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Tab Content for All Items -->
+            <div id="All" class="tab-content active">
+                {% for item in itemAll %}
+                <div class="food-list">
+                    <p><strong>{{ item['item'] }}</strong> - RM{{ item['price'] }}</p>
+                    <p>State: {{ item['state'] }} | Premise: {{ item['premise'] }}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Tab Content for Raw Food Items -->
+            <div id="RawFood" class="tab-content">
+                {% for item in raw_food_items %}
+                <div class="food-list">
+                    <p><strong>{{ item['item'] }}</strong> - RM{{ item['price'] }}</p>
+                    <p>State: {{ item['state'] }} | Premise: {{ item['premise'] }}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Tab Content for Processed Food Items -->
+            <div id="ProcessedFood" class="tab-content">
+                {% for item in processed_food_items %}
+                <div class="food-list">
+                    <p><strong>{{ item['item'] }}</strong> - RM{{ item['price'] }}</p>
+                    <p>State: {{ item['state'] }} | Premise: {{ item['premise'] }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Scroll Slider Function
+        function scrollSlider(direction) {
+            const container = document.querySelector('.marketplace');
+            const itemCard = document.querySelector('.item-card');
+            const items = document.querySelectorAll('.item-card');
+            const totalItems = items.length;
+
+            // Move one item at a time
+            currentIndex += direction;
+
+            // Wrap around logic for continuous scrolling
+            if (currentIndex < 0) {
+                currentIndex = totalItems - 1;
+            } else if (currentIndex >= totalItems) {
+                currentIndex = 0;
+            }
+
+            // Calculate scroll position based on the width of a single item
+            const itemWidth = itemCard.offsetWidth + parseInt(getComputedStyle(container).gap);
+            const scrollPosition = currentIndex * itemWidth;
+
+            container.style.transform = `translateX(-${scrollPosition}px)`;
+
+            // Restart the auto-slide timer
+            resetAutoSlide();
+        }
+
+        // Auto Slide Function
+        function autoSlide() {
+            scrollSlider(1);
+        }
+
+        // Start Auto-Slide
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(autoSlide, 3000); // Automatically slide every 3 seconds
+        }
+
+        // Reset the auto-slide when user interacts
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Initialize Auto-Slide on page load
+        window.onload = function () {
+            startAutoSlide();
+        }
+
+        function openTab(evt, tabName) {
+            // Hide all tab-content elements
+            var tabContents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+
+            // Remove active class from all tab links
+            var tabLinks = document.getElementsByClassName('tab-link');
+            for (var i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove('active');
+            }
+
+            // Show the selected tab's content and add active class to the clicked tab link
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        function filterItemsBySelect() {
+            // Get the selected item from the dropdown
+            var selectedItem = document.getElementById('itemSelectBox').value.toLowerCase().trim();
+
+            // Cache all tab contents and items
+            var tabContents = document.getElementsByClassName('tab-content');
+
+            // Early exit if no item is selected (show all)
+            if (selectedItem === "") {
+                for (var i = 0; i < tabContents.length; i++) {
+                    var items = tabContents[i].getElementsByClassName('food-list');
+                    for (var j = 0; j < items.length; j++) {
+                        items[j].classList.remove('hidden');  // Show all items
+                    }
+                }
+                return;  // Exit early
+            }
+
+            // Filter items based on the selected item
+            for (var i = 0; i < tabContents.length; i++) {
+                var items = tabContents[i].getElementsByClassName('food-list');
+                for (var j = 0; j < items.length; j++) {
+                    var itemText = items[j].textContent.trim().toLowerCase();
+
+                    // Show or hide the item based on the selected option
+                    if (itemText.includes(selectedItem)) {
+                        items[j].classList.remove('hidden');
+                    } else {
+                        items[j].classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+<footer>
+    <p class="update-info">Last updated: August 26, 2024</p>
+</footer>
+
+</html>

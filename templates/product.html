@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product['name'] }} Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333333;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .product-header h1 {
+            font-size: 28px;
+        }
+
+        .trend-section {
+            margin-bottom: 50px;
+        }
+
+        .trend-section h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .chart-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .history-price {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-details {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: right;
+            margin-top: 50px;
+        }
+
+        .footer small {
+            color: #999999;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #cccccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .trend-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        
+        .history-price {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        /* Price container */
+        .price-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        /* Price icons */
+        .price-icon {
+            font-size: 50px;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: -webkit-linear-gradient(45deg, #f3ec78, #af4261);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 20px;
+            margin-top: 10px;
+            transition: color 0.5s ease;
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            display: none;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .price-container:hover .tooltip {
+            display: block;
+        }
+        
+        .price-container:hover .price-icon {
+            transform: scale(1.2);
+        }
+        
+        /* Dynamic Bars */
+        .bar-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 10px;
+        }
+        
+        .animated-bar {
+            animation: growBar 1s ease-out forwards;
+        }
+        
+        @keyframes growBar {
+            from { width: 0; }
+            to { width: 80px; }
+        }
+        
+        /* Reflection Effects */
+        .animated-bar-reflection {
+            transform: scaleY(-1);
+            opacity: 0.1;
+            filter: blur(5px);
+        }
+        
+        /* Shadow and reflection */
+        .price-icon {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .price-bar-reflection {
+            position: absolute;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Logo Section -->
+        <div class="navbar-logo">
+            <img src="{{ url_for('static', filename='img/logo.jpg') }}">
+            <h1 style="color: black;">HargaBarangNow 2.0</h1>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="" class="nav-link active">Item</a></li>
+                <li><a href="{{ url_for('dataset') }}" class="nav-link">Dataset</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="product-top">
+            <!-- Back Button on the Left -->
+            <div class="back-button">
+                <a href="{{ url_for('item') }}" style="text-decoration: none;">
+                    <button
+                        style="padding: 10px 20px; background-color: #333333; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">
+                        Back
+                    </button>
+                </a>
+            </div>
+
+            <!-- State Selector on the Right -->
+            <div class="state-select">
+                <label for="state">Select State:</label>
+                <select id="state" onchange="updateState()">
+                    <option value="Johor" {% if product['state']=='Johor' %}selected{% endif %}>Johor</option>
+                    <option value="Kedah" {% if product['state']=='Kedah' %}selected{% endif %}>Kedah</option>
+                    <option value="Kelantan" {% if product['state']=='Kelantan' %}selected{% endif %}>Kelantan
+                    </option>
+                    <option value="Melaka" {% if product['state']=='Melaka' %}selected{% endif %}>Melaka
+                    </option>
+                    <option value="Negeri Sembilan" {% if product['state']=='Negeri Sembilan' %}selected{% endif
+                        %}>Negeri Sembilan</option>
+                    <option value="Pahang" {% if product['state']=='Pahang' %}selected{% endif %}>Pahang
+                    </option>
+                    <option value="Perak" {% if product['state']=='Perak' %}selected{% endif %}>Perak</option>
+                    <option value="Perlis" {% if product['state']=='Perlis' %}selected{% endif %}>Perlis
+                    </option>
+                    <option value="Pulau Pinang" {% if product['state']=='Pulau Pinang' %}selected{% endif %}>
+                        Pulau Pinang</option>
+                    <option value="Sabah" {% if product['state']=='Sabah' %}selected{% endif %}>Sabah</option>
+                    <option value="Sarawak" {% if product['state']=='Sarawak' %}selected{% endif %}>Sarawak
+                    </option>
+                    <option value="Selangor" {% if product['state']=='Selangor' %}selected{% endif %}>Selangor
+                    </option>
+                    <option value="Terengganu" {% if product['state']=='Terengganu' %}selected{% endif %}>
+                        Terengganu</option>
+                    <option value="W.P. Kuala Lumpur" {% if product['state']=='W.P. Kuala Lumpur' %}selected{%
+                        endif %}>W.P. Kuala Lumpur</option>
+                    <option value="W.P. Labuan" {% if product['state']=='W.P. Labuan' %}selected{% endif %}>W.P.
+                        Labuan</option>
+                    <option value="W.P. Putrajaya" {% if product['state']=='W.P. Putrajaya' %}selected{% endif
+                        %}>W.P. Putrajaya</option>
+                </select>
+            </div>
+        </div>
+
+        <header class="product-header">
+            <div>
+                <h1>{{ product['name'] }}</h1>
+                <h2 id="state-name">
+                    {{ product['state'] }}
+                    <span
+                        style="color: {% if product['price_change']|float < 0 %}red{% else %}rgb(74, 201, 74){% endif %};">
+                        ({{ product['price_change'] | float | round(2) }}%)
+                    </span>
+                </h2>
+            </div>
+            <div>
+                <h1 id="price"
+                    style="color: {% if product['price_change']|float < 0 %}red{% else %}rgb(74, 201, 74){% endif %};">
+                    RM{{ product['price'] | float | round(2) }}</h1>
+            </div>
+        </header>
+
+        <!-- Predict Future Trend -->
+        <section class="trend-section">
+            <h2>Predict Future Trend</h2>
+            <div class="chart-container">
+                <img style="width: 80%;" id="future-trend-chart" src="{{ product['future_trend_chart'] }}"
+                    alt="Predict Future Trend">
+            </div>
+        </section>
+
+        <!-- Detect Unusual Trend -->
+        <section class="trend-section">
+            <h2>Detect Unusual Trend</h2>
+            <div class="chart-container">
+                <img style="width: 80%;" id="unusual-trend-chart1" src="{{ product['unusual_trend_chart'] }}"
+                    alt="Detect Unusual Trend">
+            </div>
+            <div class="history-price">
+                <h3>Unusual Price</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Price (RM)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="unusual-price-list">
+                        {% for price in product['unusual_prices'] %}
+                        <tr>
+                            <td>{{ price['date'] }}</td>
+                            <td>{{ price['price'] | float | round(2) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Price Comparison -->
+        <section class="trend-section">
+            <h2>History Price</h2>
+            <div class="history-price">
+                <!-- Highest Price with gradient, animation and hover tooltip -->
+                <div class="price-container" id="highest-price-container">
+                    <i class="fas fa-arrow-up price-icon" style="background: linear-gradient(to right, #ff512f, #dd2476);"></i>
+                    <p id="highest-price" class="gradient-text">
+                        RM{{ product['highest_price'] | float | round(2) }}
+                    </p>
+                    <div class="tooltip">
+                        Highest price recorded
+                    </div>
+                </div>
+                
+                <!-- Dynamic bar with reflection and animation -->
+                <div class="bar-container">
+                    <svg class="price-bar" width="120" height="40">
+                        <!-- Bar for highest price -->
+                        <rect class="animated-bar" width="80" height="10" x="10" y="5" fill="url(#grad1)"></rect>
+                        <!-- Bar for lowest price -->
+                        <rect class="animated-bar" width="40" height="10" x="10" y="25" fill="url(#grad2)"></rect>
+                    </svg>
+                    <!-- Reflections and shadow effects -->
+                    <svg class="price-bar-reflection" width="120" height="40">
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(255,81,47);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(221,36,118);stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(72,219,251);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(0,100,148);stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect class="animated-bar-reflection" width="80" height="10" x="10" y="5" fill="url(#grad1)" style="opacity: 0.3;"></rect>
+                        <rect class="animated-bar-reflection" width="40" height="10" x="10" y="25" fill="url(#grad2)" style="opacity: 0.3;"></rect>
+                    </svg>
+                </div>
+        
+                <!-- Lowest Price with gradient, animation and hover tooltip -->
+                <div class="price-container" id="lowest-price-container">
+                    <i class="fas fa-arrow-down price-icon" style="background: linear-gradient(to right, #00c6ff, #0072ff);"></i>
+                    <p id="lowest-price" class="gradient-text">
+                        RM{{ product['lowest_price'] | float | round(2) }}
+                    </p>
+                    <div class="tooltip">
+                        Lowest price recorded
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Price Comparison -->
+        <section class="trend-section">
+            <h2>Price Comparison Across States</h2>
+            <div class="chart-container">
+                <img style="width: 80%;" id="price-comparison-chart"
+                    src="{{ product['price_comparison_chart'] }}" alt="Price Comparison">
+            </div>
+        </section>
+
+        <footer class="footer">
+            <small>Data last updated: August 2024</small>
+        </footer>
+    </div>
+
+    <script>
+        // Automatically set Johor as the default selected state if not already specified
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const stateSelect = document.getElementById('state');
+            if (!stateSelect.value) {
+                stateSelect.value = 'Johor';  // Default to Johor
+                updateState();
+            }
+        });
+
+        function updateState() {
+            var state = document.getElementById("state").value;
+            window.location.href = "/product/{{ product['name'] }}/" + state;
+        }
+    </script>
+</body>
+
+</html>
