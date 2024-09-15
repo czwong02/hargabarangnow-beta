@@ -44,7 +44,7 @@ def index():
     ]
 
     # Randomly select 20 items from processed_items
-    if len(processed_items) > 20:
+    if len(processed_items) > 30:
         processed_items = random.sample(processed_items, 20)
 
     # Read the CSV file for percentage increments
