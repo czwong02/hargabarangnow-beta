@@ -393,12 +393,14 @@
         });
 
         function updateState() {
-            var state = document.getElementById("state").value;
-            window.location.href = "/product/{{ product['name'] }}/" + state;
+            const stateSelect = document.getElementById('state');
+            const state = encodeURIComponent(stateSelect.value);  // Properly encode the state
+            const productName = encodeURIComponent("{{ product['name'] }}");  // Properly encode the product name
+            window.location.href = `/product/${productName}/${state}`;
         }
 
-                // Function to show warning and prompt state re-selection
-                function showWarning() {
+         // Function to show warning and prompt state re-selection
+        function showWarning() {
             alert("The chart failed to load. Please reselect the state.");
         }
 

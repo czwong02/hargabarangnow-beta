@@ -4,3 +4,6 @@
 
 Extra features:
 - All the plot graph can include its accuracy beside its plot graph.
+- dark mode
+- multilanguage support
+- ai chatbot
