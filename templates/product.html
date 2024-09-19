@@ -397,6 +397,15 @@
             window.location.href = "/product/{{ product['name'] }}/" + state;
         }
 
+                // Function to show warning and prompt state re-selection
+                function showWarning() {
+            alert("The chart failed to load. Please reselect the state.");
+        }
+
+        // Add 'onerror' event listener to detect failed image loading
+        document.getElementById('future-trend-chart').onerror = showWarning;
+        document.getElementById('unusual-trend-chart').onerror = showWarning;
+
     </script>
 </body>
 
