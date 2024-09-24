@@ -476,8 +476,8 @@
             </div>
         </section>
 
-        <footer class="footer">
-            <small>Data last updated: August 2024</small>
+        <footer>
+            <p class="update-info">Last updated: August 26, 2024</p>
         </footer>
     </div>
 
@@ -494,7 +494,9 @@
         function updateState() {
             const stateSelect = document.getElementById('state');
             const state = encodeURIComponent(stateSelect.value);  // Properly encode the state
-            const productName = encodeURIComponent("{{ product['name'] }}");  // Properly encode the product name
+            const speCharacter = "{{ product['name']}}".replace("&amp;", "%26");
+            const decodedProductName = decodeURIComponent("{{ product['name'] }}");  // Decode any already encoded characters
+            const productName = encodeURIComponent(decodedProductName);  // Properly encode the product name
             window.location.href = `/product/${productName}/${state}`;
         }
 
