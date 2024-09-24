@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+SADERI,Johor,xgboost,0.6787874682450947,94.21%
+SADERI,Kedah,random_forest,0.7267227531229087,94.29%
+SADERI,Kelantan,random_forest,1.067815314520045,94.21%
+SADERI,Melaka,random_forest,0.6119899681740735,95.02%
+SADERI,Negeri Sembilan,xgboost,0.6819554010217006,93.82%
+SADERI,Pahang,xgboost,0.8512287318965943,92.80%
+SADERI,Perak,random_forest,0.6427279263791457,93.80%
+SADERI,Perlis,random_forest,0.7560649025339223,96.30%
+SADERI,Pulau Pinang,random_forest,0.3779630759230476,97.51%
+SADERI,Sabah,random_forest,0.261134037037599,95.87%
+SADERI,Sarawak,random_forest,0.12573477787894866,97.00%
+SADERI,Selangor,xgboost,0.7308349269438107,93.34%
+SADERI,Terengganu,xgboost,0.9784488379179446,93.60%
+SADERI,W.P. Kuala Lumpur,random_forest,0.6739712105575427,92.53%
+SADERI,W.P. Labuan,random_forest,0.32288001608348876,96.74%
+SADERI,W.P. Putrajaya,random_forest,0.6904427517542154,90.99%

@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+LENGKUAS,Johor,random_forest,0.0848258855646694,98.00%
+LENGKUAS,Kedah,random_forest,0.07607748595047242,98.54%
+LENGKUAS,Kelantan,random_forest,0.12537022059837552,96.90%
+LENGKUAS,Melaka,random_forest,0.056254437288816274,98.58%
+LENGKUAS,Negeri Sembilan,random_forest,0.16663194502652226,98.11%
+LENGKUAS,Pahang,random_forest,0.15308200602435035,98.18%
+LENGKUAS,Perak,random_forest,0.1386179584806394,97.70%
+LENGKUAS,Perlis,random_forest,0.20533423025741776,96.80%
+LENGKUAS,Pulau Pinang,random_forest,0.07524996422718466,98.26%
+LENGKUAS,Sabah,random_forest,0.08959526129255174,98.59%
+LENGKUAS,Sarawak,xgboost,0.10599916799931158,98.76%
+LENGKUAS,Selangor,random_forest,0.15967092846743763,97.44%
+LENGKUAS,Terengganu,random_forest,0.21036176175040766,97.10%
+LENGKUAS,W.P. Kuala Lumpur,random_forest,0.14393747641439641,97.56%
+LENGKUAS,W.P. Labuan,random_forest,0.2398866398092533,97.27%
+LENGKUAS,W.P. Putrajaya,xgboost,0.31787627195061596,97.24%

@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+TELUR MASIN (4 biji),Johor,svr,0.09615314035987095,98.22%
+TELUR MASIN (4 biji),Kedah,random_forest,0.0766880655739251,98.82%
+TELUR MASIN (4 biji),Kelantan,random_forest,0.030662814362391006,99.12%
+TELUR MASIN (4 biji),Melaka,xgboost,0.07939192972508695,98.96%
+TELUR MASIN (4 biji),Negeri Sembilan,random_forest,0.042561229759897644,98.54%
+TELUR MASIN (4 biji),Pahang,xgboost,0.06667823971494881,99.14%
+TELUR MASIN (4 biji),Perak,random_forest,0.05814959356705337,98.83%
+TELUR MASIN (4 biji),Perlis,xgboost,0.0800401486042159,98.88%
+TELUR MASIN (4 biji),Pulau Pinang,random_forest,0.037276510916437106,99.08%
+TELUR MASIN (4 biji),Sabah,xgboost,0.030725970317095244,99.59%
+TELUR MASIN (4 biji),Sarawak,svr,0.04791262348967359,98.68%
+TELUR MASIN (4 biji),Selangor,random_forest,0.053103254667307406,99.23%
+TELUR MASIN (4 biji),Terengganu,random_forest,0.03476299893151471,99.26%
+TELUR MASIN (4 biji),W.P. Kuala Lumpur,xgboost,0.04613582781652442,99.44%
+TELUR MASIN (4 biji),W.P. Labuan,random_forest,0.14720673201761167,96.86%
+TELUR MASIN (4 biji),W.P. Putrajaya,svr,0.08354193198380523,98.75%

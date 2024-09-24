@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+KAILAN,Johor,xgboost,1.3715798717542,87.75%
+KAILAN,Kedah,xgboost,1.0991719932858246,90.78%
+KAILAN,Kelantan,xgboost,0.47540106246859576,93.94%
+KAILAN,Melaka,linear_regression,1.389697224241272,85.57%
+KAILAN,Negeri Sembilan,xgboost,1.2185423823413504,88.06%
+KAILAN,Pahang,xgboost,1.5661283280267293,85.25%
+KAILAN,Perak,xgboost,1.5101326336311707,85.82%
+KAILAN,Perlis,xgboost,0.5117263169459793,94.63%
+KAILAN,Pulau Pinang,xgboost,1.1180311143152042,90.70%
+KAILAN,Sabah,xgboost,0.679499654946597,91.38%
+KAILAN,Sarawak,linear_regression,0.7291371820512227,94.38%
+KAILAN,Selangor,xgboost,1.209442512406655,89.14%
+KAILAN,Terengganu,xgboost,1.1387720826029464,88.58%
+KAILAN,W.P. Kuala Lumpur,xgboost,1.3475439985339899,88.13%
+KAILAN,W.P. Labuan,svr,2.878803310210826,33.96%
+KAILAN,W.P. Putrajaya,xgboost,0.8330024296466001,92.93%

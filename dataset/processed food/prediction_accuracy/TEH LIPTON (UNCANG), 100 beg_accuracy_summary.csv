@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"TEH LIPTON (UNCANG), 100 beg",Johor,svr,0.18926075804103992,98.77%
+"TEH LIPTON (UNCANG), 100 beg",Kedah,random_forest,0.19305743516231685,98.73%
+"TEH LIPTON (UNCANG), 100 beg",Kelantan,random_forest,0.15848004875876448,99.01%
+"TEH LIPTON (UNCANG), 100 beg",Melaka,xgboost,0.14091558008951144,99.21%
+"TEH LIPTON (UNCANG), 100 beg",Negeri Sembilan,linear_regression,0.2696629333566872,98.16%
+"TEH LIPTON (UNCANG), 100 beg",Pahang,svr,0.26219198302999375,98.16%
+"TEH LIPTON (UNCANG), 100 beg",Perak,linear_regression,0.3608636239090618,96.80%
+"TEH LIPTON (UNCANG), 100 beg",Perlis,xgboost,0.22349514266063913,98.81%
+"TEH LIPTON (UNCANG), 100 beg",Pulau Pinang,random_forest,0.29864110712628944,98.16%
+"TEH LIPTON (UNCANG), 100 beg",Sabah,svr,0.058757276372245114,99.24%
+"TEH LIPTON (UNCANG), 100 beg",Sarawak,random_forest,0.07518438443228284,99.60%
+"TEH LIPTON (UNCANG), 100 beg",Selangor,random_forest,0.34780786514643325,97.57%
+"TEH LIPTON (UNCANG), 100 beg",Terengganu,random_forest,0.19781070114581,98.79%
+"TEH LIPTON (UNCANG), 100 beg",W.P. Kuala Lumpur,random_forest,0.3288126020402832,98.19%
+"TEH LIPTON (UNCANG), 100 beg",W.P. Labuan,svr,0.1442887110992265,97.88%
+"TEH LIPTON (UNCANG), 100 beg",W.P. Putrajaya,linear_regression,0.33419109211410924,97.11%

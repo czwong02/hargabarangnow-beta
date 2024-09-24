@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+CILI HIJAU,Johor,random_forest,0.3268726071584452,95.35%
+CILI HIJAU,Kedah,random_forest,0.4885051956474809,93.22%
+CILI HIJAU,Kelantan,random_forest,0.8127236305240577,89.16%
+CILI HIJAU,Melaka,random_forest,0.2899563226727776,96.94%
+CILI HIJAU,Negeri Sembilan,random_forest,0.40924343063536445,94.93%
+CILI HIJAU,Pahang,random_forest,0.31478084250223565,93.73%
+CILI HIJAU,Perak,random_forest,0.3932279641923296,95.44%
+CILI HIJAU,Perlis,random_forest,0.38146181426271053,93.71%
+CILI HIJAU,Pulau Pinang,random_forest,0.29526915765225087,95.52%
+CILI HIJAU,Sabah,random_forest,0.2692983831969711,98.74%
+CILI HIJAU,Sarawak,random_forest,0.40173180507986267,95.76%
+CILI HIJAU,Selangor,random_forest,0.2918103355469092,95.72%
+CILI HIJAU,Terengganu,random_forest,0.4640662328759543,93.05%
+CILI HIJAU,W.P. Kuala Lumpur,random_forest,0.34998862546835263,94.78%
+CILI HIJAU,W.P. Labuan,xgboost,1.1638399291744894,95.06%
+CILI HIJAU,W.P. Putrajaya,random_forest,0.20334079711894268,95.65%

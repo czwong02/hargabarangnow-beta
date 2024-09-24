@@ -92,14 +92,14 @@
             font-family: 'Arial', sans-serif;
             color: #333;
         }
-        
+
         .history-price {
             display: flex;
             justify-content: space-around;
             align-items: center;
             margin-top: 20px;
         }
-        
+
         /* Price container */
         .price-container {
             position: relative;
@@ -109,7 +109,7 @@
             text-align: center;
             padding: 10px;
         }
-        
+
         /* Price icons */
         .price-icon {
             font-size: 50px;
@@ -118,7 +118,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             transition: transform 0.5s ease;
         }
-        
+
         /* Gradient text */
         .gradient-text {
             background: -webkit-linear-gradient(45deg, #f3ec78, #af4261);
@@ -128,7 +128,7 @@
             margin-top: 10px;
             transition: color 0.5s ease;
         }
-        
+
         /* Tooltip */
         .tooltip {
             display: none;
@@ -147,11 +147,11 @@
         .price-container:hover .tooltip {
             display: block;
         }
-        
+
         .price-container:hover .price-icon {
             transform: scale(1.2);
         }
-        
+
         /* Dynamic Bars */
         .bar-container {
             display: flex;
@@ -159,31 +159,67 @@
             position: relative;
             margin-top: 10px;
         }
-        
+
         .animated-bar {
             animation: growBar 1s ease-out forwards;
         }
-        
+
         @keyframes growBar {
-            from { width: 0; }
-            to { width: 80px; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 80px;
+            }
         }
-        
+
         /* Reflection Effects */
         .animated-bar-reflection {
             transform: scaleY(-1);
             opacity: 0.1;
             filter: blur(5px);
         }
-        
+
         /* Shadow and reflection */
         .price-icon {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
-        
+
         .price-bar-reflection {
             position: absolute;
             top: 50px;
+        }
+
+        /* Make the section responsive */
+        @media (max-width: 768px) {
+            .trend-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .chart-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .model-accuracy-info {
+                width: 100%;
+            }
+        }
+
+        /* Hover effect for the image */
+        .trend-chart-image:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Info item hover effect */
+        .info-item:hover {
+            background-color: #f1f1f1;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.2s ease-in-out;
         }
     </style>
 </head>
@@ -229,8 +265,8 @@
                     </option>
                     <option value="Melaka" {% if product['state']=='Melaka' %}selected{% endif %}>Melaka
                     </option>
-                    <option value="Negeri Sembilan" {% if product['state']=='Negeri Sembilan' %}selected{% endif
-                        %}>Negeri Sembilan</option>
+                    <option value="Negeri Sembilan" {% if product['state']=='Negeri Sembilan' %}selected{% endif %}>
+                        Negeri Sembilan</option>
                     <option value="Pahang" {% if product['state']=='Pahang' %}selected{% endif %}>Pahang
                     </option>
                     <option value="Perak" {% if product['state']=='Perak' %}selected{% endif %}>Perak</option>
@@ -245,12 +281,12 @@
                     </option>
                     <option value="Terengganu" {% if product['state']=='Terengganu' %}selected{% endif %}>
                         Terengganu</option>
-                    <option value="W.P. Kuala Lumpur" {% if product['state']=='W.P. Kuala Lumpur' %}selected{%
-                        endif %}>W.P. Kuala Lumpur</option>
+                    <option value="W.P. Kuala Lumpur" {% if product['state']=='W.P. Kuala Lumpur' %}selected{% endif %}>
+                        W.P. Kuala Lumpur</option>
                     <option value="W.P. Labuan" {% if product['state']=='W.P. Labuan' %}selected{% endif %}>W.P.
                         Labuan</option>
-                    <option value="W.P. Putrajaya" {% if product['state']=='W.P. Putrajaya' %}selected{% endif
-                        %}>W.P. Putrajaya</option>
+                    <option value="W.P. Putrajaya" {% if product['state']=='W.P. Putrajaya' %}selected{% endif %}>W.P.
+                        Putrajaya</option>
                 </select>
             </div>
         </div>
@@ -260,8 +296,7 @@
                 <h1>{{ product['name'] }}</h1>
                 <h2 id="state-name">
                     {{ product['state'] }}
-                    <span
-                        style="color: {% if product['price_change']|float|round(2) < 0 %}red
+                    <span style="color: {% if product['price_change']|float|round(2) < 0 %}red
                                     {% elif product['price_change']|float|round(2) > 0 %}rgb(74, 201, 74)
                                     {% else %}grey{% endif %};">
                         ({% if product['price_change']|float|round(2) > 0 %}+{% else %}{% endif %}
@@ -270,8 +305,7 @@
                 </h2>
             </div>
             <div>
-                <h1 id="price"
-                    style="color: {% if product['price_change']|float|round(2) < 0 %}red
+                <h1 id="price" style="color: {% if product['price_change']|float|round(2) < 0 %}red
                                 {% elif product['price_change']|float|round(2) > 0 %}rgb(74, 201, 74)
                                 {% else %}grey{% endif %};">
                     RM{{ product['price'] | float | round(2) }}</h1>
@@ -279,21 +313,82 @@
         </header>
 
         <!-- Predict Future Trend -->
-        <section class="trend-section">
-            <h2>Predict Future Trend</h2>
-            <div class="chart-container">
-                <img style="width: 80%;" id="future-trend-chart" src="{{ product['future_trend_chart'] }}"
-                    alt="Predict Future Trend">
+        <section class="trend-section" style="padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+            <h2 style="text-align: center; font-size: 1.8em; margin-bottom: 20px;">Predict Future Trend</h2>
+
+            <div class="trend-container"
+                style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <!-- Chart Container (Left side) -->
+                <div class="chart-container" style="flex: 2; margin-right: 20px;">
+                    <img class="trend-chart-image"
+                        style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
+                        id="future-trend-chart" src="{{ product['future_trend_chart'] }}" alt="Predict Future Trend">
+                </div>
+
+                <!-- Model and Accuracy Info (Right side) -->
+                {% if product['future_trend_chart_model'] %}
+                <div class="model-accuracy-info"
+                    style="flex: 1; min-width: 280px; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <div class="info-item" style="margin-bottom: 15px;">
+                        <i class="fas fa-cogs" style="color: #007bff; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">Best Model:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
+                            product['future_trend_chart_model'] }}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">Accuracy:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
+                            product['future_trend_chart_accuracy'] }}</span>
+                    </div>
+                </div>
+                {% else %}
+                <div class="model-accuracy-info"
+                    style="flex: 1; min-width: 280px; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <p style="font-size: 1.1em; color: #777;">No accuracy data available for future trend chart.</p>
+                </div>
+                {% endif %}
             </div>
         </section>
 
         <!-- Detect Unusual Trend -->
-        <section class="trend-section">
-            <h2>Detect Unusual Trend</h2>
-            <div class="chart-container">
-                <img style="width: 80%;" id="unusual-trend-chart1" src="{{ product['unusual_trend_chart'] }}"
-                    alt="Detect Unusual Trend">
+        <section class="trend-section" style="padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+            <h2 style="text-align: center; font-size: 1.8em; margin-bottom: 20px;">Predict Future Trend</h2>
+
+            <div class="trend-container"
+                style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+                <!-- Chart Container (Left side) -->
+                <div class="chart-container" style="flex: 2; margin-right: 20px;">
+                    <img class="trend-chart-image"
+                        style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
+                        id="future-trend-chart" src="{{ product['unusual_trend_chart'] }}" alt="Predict Future Trend">
+                </div>
+
+                <!-- Model and Accuracy Info (Right side) -->
+                {% if product['unusual_trend_chart_model'] %}
+                <div class="model-accuracy-info"
+                    style="flex: 1; min-width: 280px; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <div class="info-item" style="margin-bottom: 15px;">
+                        <i class="fas fa-cogs" style="color: #007bff; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">Best Model:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
+                            product['unusual_trend_chart_model'] }}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">Accuracy:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
+                            product['unusual_trend_chart_accuracy'] | float | round(2) }}%</span>
+                    </div>
+                </div>
+                {% else %}
+                <div class="model-accuracy-info"
+                    style="flex: 1; min-width: 280px; padding: 20px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <p style="font-size: 1.1em; color: #777;">No accuracy data available for future trend chart.</p>
+                </div>
+                {% endif %}
             </div>
+
             <div class="history-price">
                 <h3>Unusual Price</h3>
                 <table>
@@ -321,7 +416,8 @@
             <div class="history-price">
                 <!-- Highest Price with gradient, animation and hover tooltip -->
                 <div class="price-container" id="highest-price-container">
-                    <i class="fas fa-arrow-up price-icon" style="background: linear-gradient(to right, #ff512f, #dd2476);"></i>
+                    <i class="fas fa-arrow-up price-icon"
+                        style="background: linear-gradient(to right, #ff512f, #dd2476);"></i>
                     <p id="highest-price" class="gradient-text">
                         RM{{ product['highest_price'] | float | round(2) }}
                     </p>
@@ -329,7 +425,7 @@
                         Highest price recorded
                     </div>
                 </div>
-                
+
                 <!-- Dynamic bar with reflection and animation -->
                 <div class="bar-container">
                     <svg class="price-bar" width="120" height="40">
@@ -350,14 +446,17 @@
                                 <stop offset="100%" style="stop-color:rgb(0,100,148);stop-opacity:1" />
                             </linearGradient>
                         </defs>
-                        <rect class="animated-bar-reflection" width="80" height="10" x="10" y="5" fill="url(#grad1)" style="opacity: 0.3;"></rect>
-                        <rect class="animated-bar-reflection" width="40" height="10" x="10" y="25" fill="url(#grad2)" style="opacity: 0.3;"></rect>
+                        <rect class="animated-bar-reflection" width="80" height="10" x="10" y="5" fill="url(#grad1)"
+                            style="opacity: 0.3;"></rect>
+                        <rect class="animated-bar-reflection" width="40" height="10" x="10" y="25" fill="url(#grad2)"
+                            style="opacity: 0.3;"></rect>
                     </svg>
                 </div>
-        
+
                 <!-- Lowest Price with gradient, animation and hover tooltip -->
                 <div class="price-container" id="lowest-price-container">
-                    <i class="fas fa-arrow-down price-icon" style="background: linear-gradient(to right, #00c6ff, #0072ff);"></i>
+                    <i class="fas fa-arrow-down price-icon"
+                        style="background: linear-gradient(to right, #00c6ff, #0072ff);"></i>
                     <p id="lowest-price" class="gradient-text">
                         RM{{ product['lowest_price'] | float | round(2) }}
                     </p>
@@ -372,8 +471,8 @@
         <section class="trend-section">
             <h2>Price Comparison Across States</h2>
             <div class="chart-container">
-                <img style="width: 80%;" id="price-comparison-chart"
-                    src="{{ product['price_comparison_chart'] }}" alt="Price Comparison">
+                <img style="width: 80%;" id="price-comparison-chart" src="{{ product['price_comparison_chart'] }}"
+                    alt="Price Comparison">
             </div>
         </section>
 
@@ -399,7 +498,7 @@
             window.location.href = `/product/${productName}/${state}`;
         }
 
-         // Function to show warning and prompt state re-selection
+        // Function to show warning and prompt state re-selection
         function showWarning() {
             alert("The chart failed to load. Please reselect the state.");
         }

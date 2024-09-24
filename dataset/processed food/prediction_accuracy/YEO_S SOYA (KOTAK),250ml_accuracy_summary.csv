@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"YEO_S SOYA (KOTAK),250ml",Johor,linear_regression,0.13262858800734187,95.59%
+"YEO_S SOYA (KOTAK),250ml",Kedah,random_forest,0.014821621588398958,98.83%
+"YEO_S SOYA (KOTAK),250ml",Kelantan,random_forest,0.022214137376763195,98.22%
+"YEO_S SOYA (KOTAK),250ml",Melaka,xgboost,0.015303433579570399,99.06%
+"YEO_S SOYA (KOTAK),250ml",Negeri Sembilan,random_forest,0.004455629794347672,99.73%
+"YEO_S SOYA (KOTAK),250ml",Pahang,random_forest,0.02835387976507882,97.49%
+"YEO_S SOYA (KOTAK),250ml",Perak,random_forest,0.013237132648336874,98.83%
+"YEO_S SOYA (KOTAK),250ml",Perlis,random_forest,0.01712646467774766,98.86%
+"YEO_S SOYA (KOTAK),250ml",Pulau Pinang,random_forest,0.012306763951690553,98.59%
+"YEO_S SOYA (KOTAK),250ml",Sabah,linear_regression,0.05140175302942706,91.05%
+"YEO_S SOYA (KOTAK),250ml",Sarawak,random_forest,0.011064213733127628,98.95%
+"YEO_S SOYA (KOTAK),250ml",Selangor,random_forest,1.6032499606778265,84.01%
+"YEO_S SOYA (KOTAK),250ml",Terengganu,xgboost,0.011794516851845998,99.18%
+"YEO_S SOYA (KOTAK),250ml",W.P. Kuala Lumpur,random_forest,0.01471413586790235,97.94%
+"YEO_S SOYA (KOTAK),250ml",W.P. Labuan,random_forest,0.05245501663178896,96.94%
+"YEO_S SOYA (KOTAK),250ml",W.P. Putrajaya,linear_regression,0.02494932939305509,97.20%

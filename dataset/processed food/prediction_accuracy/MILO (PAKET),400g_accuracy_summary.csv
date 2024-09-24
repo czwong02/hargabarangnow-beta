@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"MILO (PAKET),400g",Johor,xgboost,0.07326376913335654,99.36%
+"MILO (PAKET),400g",Kedah,random_forest,0.042847913532826985,99.52%
+"MILO (PAKET),400g",Kelantan,svr,0.04824061457211594,99.55%
+"MILO (PAKET),400g",Melaka,xgboost,0.06895980432347568,99.40%
+"MILO (PAKET),400g",Negeri Sembilan,xgboost,0.0469990473018219,99.57%
+"MILO (PAKET),400g",Pahang,xgboost,0.03388586959239916,99.67%
+"MILO (PAKET),400g",Perak,random_forest,0.07333989556518793,99.38%
+"MILO (PAKET),400g",Perlis,xgboost,0.04753527648833692,99.58%
+"MILO (PAKET),400g",Pulau Pinang,random_forest,0.0445987984232193,99.54%
+"MILO (PAKET),400g",Sabah,random_forest,0.04241316169828049,99.57%
+"MILO (PAKET),400g",Sarawak,xgboost,0.029674084962970717,99.79%
+"MILO (PAKET),400g",Selangor,random_forest,0.06403079800109486,99.29%
+"MILO (PAKET),400g",Terengganu,xgboost,0.05957415362304481,99.45%
+"MILO (PAKET),400g",W.P. Kuala Lumpur,random_forest,0.08764991020315101,99.31%
+"MILO (PAKET),400g",W.P. Labuan,random_forest,0.0896101181553105,99.18%
+"MILO (PAKET),400g",W.P. Putrajaya,xgboost,0.13523052014096207,98.81%

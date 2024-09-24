@@ -3,6 +3,8 @@ import csv
 import random
 from collections import defaultdict
 from urllib.parse import unquote
+import os
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -223,9 +225,8 @@ def product_details(food_item, state):
 
     # Example data retrieval from database or API
     product_data = get_product_data(food_item, state)
-
+    
     return render_template("product.html", product=product_data)
-
 
 def get_product_data(food_item, state):
     product_data = None
@@ -243,6 +244,26 @@ def get_product_data(food_item, state):
                     row["item_name"].lower() == food_item.lower()
                     and row["state"].lower() == state.lower()
                 ):
+                    # Fetch best model accuracy for future trend and unusual trend charts
+                    accuracy_file_path = f'dataset/raw food/anomalies_accuracy/{food_item}_accuracy_summary.csv'
+                    prediction_accuracy_path = f'dataset/raw food/prediction_accuracy/{food_item}_accuracy_summary.csv'
+
+                    # Initialize empty accuracy data
+                    future_trend_accuracy = None
+                    unusual_trend_accuracy = None
+
+                    # Check if the accuracy file exists, if yes, load it
+                    if os.path.exists(prediction_accuracy_path):
+                        accuracy_df = pd.read_csv(prediction_accuracy_path)
+                        future_trend_accuracy = accuracy_df[(accuracy_df['item_name'] == food_item) & (accuracy_df['state'] == state)]
+                        if not future_trend_accuracy.empty:
+                            future_trend_accuracy = future_trend_accuracy.iloc[0].to_dict()
+
+                    if os.path.exists(accuracy_file_path):
+                        prediction_accuracy_df = pd.read_csv(accuracy_file_path)
+                        unusual_trend_accuracy = prediction_accuracy_df[(prediction_accuracy_df['item_name'] == food_item) & (prediction_accuracy_df['state'] == state)]
+                        if not unusual_trend_accuracy.empty:
+                            unusual_trend_accuracy = unusual_trend_accuracy.iloc[0].to_dict()
 
                     product_data = {
                         "name": row["item_name"].replace("%20", " "),
@@ -263,6 +284,12 @@ def get_product_data(food_item, state):
                         "future_trend_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/raw%20food/prediction/{item_name_modified}/prediction_{state}.png",
                         "unusual_trend_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/raw%20food/anomaly/{item_name_modified}/anomalies_{state}.png",
                         "price_comparison_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/raw%20food/average%20price/{item_name_modified}.png",
+                        "future_trend_chart_model": future_trend_accuracy.get('best_model'),
+                        "future_trend_chart_rmse": future_trend_accuracy.get('best_model_rmse'),
+                        "future_trend_chart_accuracy": future_trend_accuracy.get('best_model_accuracy'),
+                        "unusual_trend_chart_model": unusual_trend_accuracy.get('best_model'),
+                        "unusual_trend_chart_rmse": unusual_trend_accuracy.get('best_model_rmse'),
+                        "unusual_trend_chart_accuracy": unusual_trend_accuracy.get('best_model_accuracy'),
                     }
                     break
             else:
@@ -271,6 +298,28 @@ def get_product_data(food_item, state):
                     row["item_name"].lower() == food_item.lower()
                     and row["state"].lower() == state.lower()
                 ):
+
+                    # Fetch best model accuracy for future trend and unusual trend charts
+                    accuracy_file_path = f'dataset/processed food/anomalies_accuracy/{food_item}_accuracy_summary.csv'
+                    prediction_accuracy_path = f'dataset/processed food/prediction_accuracy/{food_item}_accuracy_summary.csv'
+
+                    # Initialize empty accuracy data
+                    future_trend_accuracy = None
+                    unusual_trend_accuracy = None
+
+                    # Check if the accuracy file exists, if yes, load it
+                    if os.path.exists(prediction_accuracy_path):
+                        accuracy_df = pd.read_csv(prediction_accuracy_path)
+                        future_trend_accuracy = accuracy_df[(accuracy_df['item_name'] == food_item) & (accuracy_df['state'] == state)]
+                        if not future_trend_accuracy.empty:
+                            future_trend_accuracy = future_trend_accuracy.iloc[0].to_dict()
+
+                    if os.path.exists(accuracy_file_path):
+                        prediction_accuracy_df = pd.read_csv(accuracy_file_path)
+                        unusual_trend_accuracy = prediction_accuracy_df[(prediction_accuracy_df['item_name'] == food_item) & (prediction_accuracy_df['state'] == state)]
+                        if not unusual_trend_accuracy.empty:
+                            unusual_trend_accuracy = unusual_trend_accuracy.iloc[0].to_dict()
+
                     product_data = {
                         "name": row["item_name"],
                         "state": row["state"],
@@ -290,6 +339,12 @@ def get_product_data(food_item, state):
                         "future_trend_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/processed%20food/prediction/{item_name_modified}/prediction_{state}.png",
                         "unusual_trend_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/processed%20food/anomaly/{item_name_modified}/anomalies_{state}.png",
                         "price_comparison_chart": f"https://raw.githubusercontent.com/czwong02/hargabarangnow-model/main/processed%20food/average%20price/{item_name_modified}.png",
+                        "future_trend_chart_model": future_trend_accuracy.get('best_model'),
+                        "future_trend_chart_rmse": future_trend_accuracy.get('best_model_rmse'),
+                        "future_trend_chart_accuracy": future_trend_accuracy.get('best_model_accuracy'),
+                        "unusual_trend_chart_model": unusual_trend_accuracy.get('best_model'),
+                        "unusual_trend_chart_rmse": unusual_trend_accuracy.get('best_model_rmse'),
+                        "unusual_trend_chart_accuracy": unusual_trend_accuracy.get('best_model_accuracy'),
                     }
                     break
 
@@ -306,6 +361,13 @@ def get_product_data(food_item, state):
             "future_trend_chart": "",
             "unusual_trend_chart": "",
             "price_comparison_chart": "",
+            "future_trend_chart_model": "",
+            "future_trend_chart_rmse": "",
+            "future_trend_chart_accuracy": "",
+            "unusual_trend_chart_model": "",
+            "unusual_trend_chart_rmse": "",
+            "unusual_trend_chart_accuracy": "",
+     
         }
 
     return product_data

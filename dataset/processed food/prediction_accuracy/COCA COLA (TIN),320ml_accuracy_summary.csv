@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"COCA COLA (TIN),320ml",Johor,xgboost,0.015228443295733135,99.36%
+"COCA COLA (TIN),320ml",Kedah,linear_regression,0.014240041870447692,99.48%
+"COCA COLA (TIN),320ml",Kelantan,random_forest,0.020118405384845703,98.19%
+"COCA COLA (TIN),320ml",Melaka,random_forest,0.022617484492356076,98.10%
+"COCA COLA (TIN),320ml",Negeri Sembilan,random_forest,0.016649000337583517,98.88%
+"COCA COLA (TIN),320ml",Pahang,random_forest,0.01668204622928771,99.06%
+"COCA COLA (TIN),320ml",Perak,xgboost,0.012763239729280057,99.41%
+"COCA COLA (TIN),320ml",Perlis,svr,0.0381851827658317,97.60%
+"COCA COLA (TIN),320ml",Pulau Pinang,xgboost,0.01834770392436426,99.14%
+"COCA COLA (TIN),320ml",Sabah,random_forest,0.004764633799014524,99.62%
+"COCA COLA (TIN),320ml",Sarawak,random_forest,0.0061447885725876075,99.58%
+"COCA COLA (TIN),320ml",Selangor,xgboost,0.011981056628281339,99.44%
+"COCA COLA (TIN),320ml",Terengganu,svr,0.04378585680382388,97.29%
+"COCA COLA (TIN),320ml",W.P. Kuala Lumpur,random_forest,0.011110152318148105,99.25%
+"COCA COLA (TIN),320ml",W.P. Labuan,random_forest,0.01440273793300209,99.10%
+"COCA COLA (TIN),320ml",W.P. Putrajaya,random_forest,0.04638934365569968,97.88%

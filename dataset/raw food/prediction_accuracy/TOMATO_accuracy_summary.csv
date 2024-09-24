@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+TOMATO,Johor,random_forest,0.9075197996758002,70.44%
+TOMATO,Kedah,random_forest,0.7556699862402644,76.43%
+TOMATO,Kelantan,random_forest,0.6919061337003812,74.89%
+TOMATO,Melaka,random_forest,0.8506270274928404,72.73%
+TOMATO,Negeri Sembilan,random_forest,0.8091647631463256,71.59%
+TOMATO,Pahang,random_forest,0.9402682593759236,66.84%
+TOMATO,Perak,random_forest,0.7685118362002074,73.79%
+TOMATO,Perlis,random_forest,0.68710974748705,79.52%
+TOMATO,Pulau Pinang,random_forest,0.761606345718876,75.59%
+TOMATO,Sabah,random_forest,0.44322229281020736,93.74%
+TOMATO,Sarawak,random_forest,0.4878743583136376,90.68%
+TOMATO,Selangor,random_forest,0.8265849343962263,72.18%
+TOMATO,Terengganu,random_forest,0.8331493769668529,72.14%
+TOMATO,W.P. Kuala Lumpur,random_forest,0.7573883478030591,73.85%
+TOMATO,W.P. Labuan,random_forest,0.7787041792191399,87.62%
+TOMATO,W.P. Putrajaya,random_forest,0.8206627068526446,74.60%

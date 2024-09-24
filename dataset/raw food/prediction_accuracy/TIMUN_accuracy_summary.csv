@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+TIMUN,Johor,linear_regression,1.2492443987137622,63.98%
+TIMUN,Kedah,xgboost,0.7556504891603195,82.16%
+TIMUN,Kelantan,random_forest,0.6621418606114367,85.17%
+TIMUN,Melaka,linear_regression,1.183997725609688,71.48%
+TIMUN,Negeri Sembilan,xgboost,1.0873240435956362,76.10%
+TIMUN,Pahang,xgboost,1.2411288983159336,70.19%
+TIMUN,Perak,xgboost,0.9690026181052557,78.35%
+TIMUN,Perlis,linear_regression,0.5717880682252551,88.23%
+TIMUN,Pulau Pinang,xgboost,0.7871042494742948,83.54%
+TIMUN,Sabah,linear_regression,0.16721278881711196,93.05%
+TIMUN,Sarawak,xgboost,0.646597153827175,87.81%
+TIMUN,Selangor,xgboost,0.9912024459352393,79.04%
+TIMUN,Terengganu,xgboost,1.002830776834389,81.25%
+TIMUN,W.P. Kuala Lumpur,xgboost,1.1076612872038223,77.47%
+TIMUN,W.P. Labuan,linear_regression,0.30592357859928426,90.66%
+TIMUN,W.P. Putrajaya,xgboost,0.8952230408884295,81.17%

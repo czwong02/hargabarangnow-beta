@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"SOS CILI MAGGI,240g",Johor,random_forest,0.024665867696644764,99.16%
+"SOS CILI MAGGI,240g",Kedah,random_forest,0.022904061496419714,98.98%
+"SOS CILI MAGGI,240g",Kelantan,random_forest,0.023325112030515294,99.07%
+"SOS CILI MAGGI,240g",Melaka,random_forest,0.027191252811106598,99.25%
+"SOS CILI MAGGI,240g",Negeri Sembilan,random_forest,0.016896461980963534,99.19%
+"SOS CILI MAGGI,240g",Pahang,random_forest,0.017955810583087685,99.24%
+"SOS CILI MAGGI,240g",Perak,random_forest,0.014757552535598227,99.26%
+"SOS CILI MAGGI,240g",Perlis,random_forest,0.01511623496424657,99.40%
+"SOS CILI MAGGI,240g",Pulau Pinang,random_forest,0.02741219983991067,99.07%
+"SOS CILI MAGGI,240g",Sabah,random_forest,0.024628827544175468,99.14%
+"SOS CILI MAGGI,240g",Sarawak,random_forest,0.019312264101033257,99.36%
+"SOS CILI MAGGI,240g",Selangor,random_forest,0.03327301525667026,98.83%
+"SOS CILI MAGGI,240g",Terengganu,linear_regression,0.023900514711543995,99.25%
+"SOS CILI MAGGI,240g",W.P. Kuala Lumpur,random_forest,0.021928954899994392,99.23%
+"SOS CILI MAGGI,240g",W.P. Labuan,random_forest,0.04044620982895378,98.75%
+"SOS CILI MAGGI,240g",W.P. Putrajaya,linear_regression,0.038817823760241975,99.03%

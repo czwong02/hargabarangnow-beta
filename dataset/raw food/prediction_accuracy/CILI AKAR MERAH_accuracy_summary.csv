@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+CILI AKAR MERAH,Johor,random_forest,1.1276778703069634,93.25%
+CILI AKAR MERAH,Kedah,random_forest,1.0326098496705127,93.53%
+CILI AKAR MERAH,Kelantan,random_forest,1.130321177025941,93.35%
+CILI AKAR MERAH,Melaka,random_forest,1.0987888178210166,92.60%
+CILI AKAR MERAH,Negeri Sembilan,random_forest,1.0436299705539043,93.46%
+CILI AKAR MERAH,Pahang,random_forest,1.3518031105852863,93.21%
+CILI AKAR MERAH,Perak,random_forest,1.2665626859590713,92.79%
+CILI AKAR MERAH,Perlis,random_forest,0.7402993081172224,96.50%
+CILI AKAR MERAH,Pulau Pinang,random_forest,1.1639918567679073,92.21%
+CILI AKAR MERAH,Sabah,random_forest,4.383632995665921,89.30%
+CILI AKAR MERAH,Sarawak,linear_regression,0.8456316502447554,92.96%
+CILI AKAR MERAH,Selangor,random_forest,1.0261722597543348,93.45%
+CILI AKAR MERAH,Terengganu,random_forest,1.0707879924860582,94.05%
+CILI AKAR MERAH,W.P. Kuala Lumpur,random_forest,0.9561752604755372,95.00%
+CILI AKAR MERAH,W.P. Labuan,linear_regression,11.200000000000008,-197.98%
+CILI AKAR MERAH,W.P. Putrajaya,linear_regression,0.9556576890749365,93.86%

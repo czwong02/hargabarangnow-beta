@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"TEH BOH (UNCANG),100 beg",Johor,svr,0.06420994611344027,98.82%
+"TEH BOH (UNCANG),100 beg",Kedah,linear_regression,0.1754567239256306,98.35%
+"TEH BOH (UNCANG),100 beg",Kelantan,random_forest,0.029076317368033098,99.57%
+"TEH BOH (UNCANG),100 beg",Melaka,random_forest,0.08680767598672587,99.27%
+"TEH BOH (UNCANG),100 beg",Negeri Sembilan,svr,0.13145129102494096,99.09%
+"TEH BOH (UNCANG),100 beg",Pahang,svr,0.09327056980118918,99.07%
+"TEH BOH (UNCANG),100 beg",Perak,svr,0.11071704114177046,98.77%
+"TEH BOH (UNCANG),100 beg",Perlis,svr,0.051648473135581456,99.19%
+"TEH BOH (UNCANG),100 beg",Pulau Pinang,linear_regression,0.11741455642254785,99.11%
+"TEH BOH (UNCANG),100 beg",Sabah,xgboost,0.08213331084406528,99.57%
+"TEH BOH (UNCANG),100 beg",Sarawak,random_forest,0.03337346585977016,99.61%
+"TEH BOH (UNCANG),100 beg",Selangor,linear_regression,0.07086818840796309,98.79%
+"TEH BOH (UNCANG),100 beg",Terengganu,random_forest,0.05478260783295007,99.41%
+"TEH BOH (UNCANG),100 beg",W.P. Kuala Lumpur,linear_regression,0.09575449738927172,98.99%
+"TEH BOH (UNCANG),100 beg",W.P. Labuan,xgboost,0.05016712600380101,99.67%
+"TEH BOH (UNCANG),100 beg",W.P. Putrajaya,xgboost,0.16793956199574858,98.97%

@@ -1,0 +1,17 @@
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+LOBAK MERAH,Johor,random_forest,0.09684790586545067,95.95%
+LOBAK MERAH,Kedah,random_forest,0.11447018906703509,97.13%
+LOBAK MERAH,Kelantan,random_forest,0.1233105802476478,94.61%
+LOBAK MERAH,Melaka,random_forest,0.08193977619775554,96.92%
+LOBAK MERAH,Negeri Sembilan,random_forest,0.09936820646467674,96.37%
+LOBAK MERAH,Pahang,random_forest,0.1019826041376721,96.01%
+LOBAK MERAH,Perak,random_forest,0.10872482743578146,96.69%
+LOBAK MERAH,Perlis,random_forest,0.11723801444236925,96.54%
+LOBAK MERAH,Pulau Pinang,random_forest,0.0839008954118016,97.43%
+LOBAK MERAH,Sabah,xgboost,0.07604349676935246,98.92%
+LOBAK MERAH,Sarawak,random_forest,0.11247678758275206,96.36%
+LOBAK MERAH,Selangor,random_forest,0.07955104707166812,97.37%
+LOBAK MERAH,Terengganu,random_forest,0.10025082331141295,95.75%
+LOBAK MERAH,W.P. Kuala Lumpur,random_forest,0.10333623810879748,96.82%
+LOBAK MERAH,W.P. Labuan,random_forest,0.10066055372403629,97.84%
+LOBAK MERAH,W.P. Putrajaya,svr,0.18891484777262355,95.66%
