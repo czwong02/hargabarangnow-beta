@@ -495,9 +495,7 @@
             const stateSelect = document.getElementById('state');
             const state = encodeURIComponent(stateSelect.value);  // Properly encode the state
             const speCharacter = "{{ product['name']}}".replace("&amp;", "%26");
-            const decodedProductName = decodeURIComponent("{{ product['name'] }}");  // Decode any already encoded characters
-            const productName = encodeURIComponent(decodedProductName);  // Properly encode the product name
-            window.location.href = `/product/${productName}/${state}`;
+            window.location.href = `/product/${speCharacter}/${state}`;
         }
 
         // Function to show warning and prompt state re-selection
