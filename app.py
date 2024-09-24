@@ -373,35 +373,44 @@ def get_product_data(food_item, state):
 
 
 def get_raw_unusual_prices(food_item, state):
-    # Custom logic to identify unusual prices using your anomaly detection models
-    # This function could load a model and apply it to detect anomalies
-    # For now, we'll return an empty list
-    unusual_prices = []
 
-    with open(
-        f"dataset/raw food/anomalies/{food_item}/anomalies_{state}.csv", newline=""
-    ) as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            unusual_prices.append({"date": row["date"], "price": row["price"]})
+    try:
+        # Custom logic to identify unusual prices using your anomaly detection models
+        # This function could load a model and apply it to detect anomalies
+        # For now, we'll return an empty list
+        # Check if the file exists before attempting to open it
+
+        unusual_prices = []
+
+        with open(
+            f"dataset/raw food/anomalies/{food_item}/anomalies_{state}.csv", newline=""
+        ) as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                unusual_prices.append({"date": row["date"], "price": row["price"]})
+    except Exception as e:
+        print(f"An error occurred: {e}")  # Catch any other exception
 
     return unusual_prices
 
 
 def get_processed_unusual_prices(food_item, state):
-    # Custom logic to identify unusual prices using your anomaly detection models
-    # This function could load a model and apply it to detect anomalies
-    # For now, we'll return an empty list
-    unusual_prices = []
+    try:
+        # Custom logic to identify unusual prices using your anomaly detection models
+        # This function could load a model and apply it to detect anomalies
+        # For now, we'll return an empty list
+        unusual_prices = []
 
-    with open(
-        f"dataset/processed food/anomalies/{food_item}/anomalies_{state}.csv",
-        newline="",
-    ) as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            unusual_prices.append({"date": row["date"], "price": row["price"]})
-
+        with open(
+            f"dataset/processed food/anomalies/{food_item}/anomalies_{state}.csv",
+            newline="",
+        ) as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                unusual_prices.append({"date": row["date"], "price": row["price"]})
+    except Exception as e:
+        print(f"An error occurred: {e}")  # Catch any other exception
+        
     return unusual_prices
 
 
