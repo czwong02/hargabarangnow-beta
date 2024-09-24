@@ -2,12 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for
 import csv
 import random
 from collections import defaultdict
-from urllib.parse import unquote
+from urllib.parse import unquote, quote
 import os
 import pandas as pd
 
 app = Flask(__name__)
-
 
 @app.route("/")
 def home():
@@ -165,7 +164,7 @@ def item():
             raw_items.append(
                 {
                     "name": row["item_name"],
-                    "url": "/product/" + row["item_name"] + "/Johor",
+                    "url": "/product/" + quote(row["item_name"]) + "/Johor",
                 }
             )  # Assuming 'item_name' is the column storing item names
 
@@ -174,7 +173,7 @@ def item():
         reader = csv.DictReader(csvfile)
         for row in reader:
             processed_items.append(
-                {"name": row["item"], "url": "/product/" + row["item"] + "/Johor"}
+                {"name": row["item"], "url": "/product/" + quote(row["item"]) + "/Johor"}
             )  # Assuming 'item_name' is the column storing item names
 
     # Get 'show_all' parameters from the query string for both raw and processed items
