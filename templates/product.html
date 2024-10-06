@@ -191,6 +191,61 @@
             top: 50px;
         }
 
+
+        /* Modal container */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Modal content (image) */
+        .modal-content {
+            display: block;
+            margin: 10% auto;
+            max-width: 80%;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Zoom-in effect for the image */
+        .zoom-image {
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .zoom-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal image (full screen) */
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        /* Modal close button hover */
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         /* Make the section responsive */
         @media (max-width: 768px) {
             .trend-container {
@@ -322,7 +377,7 @@
                 <div class="chart-container" style="flex: 2; margin-right: 20px;">
                     <img class="trend-chart-image"
                         style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
-                        id="future-trend-chart" src="{{ product['future_trend_chart'] }}" alt="Predict Future Trend">
+                        id="future-trend-chart" src="{{ product['future_trend_chart'] }}" alt="Predict Future Trend" onclick="openPredictModal()">
                 </div>
 
                 <!-- Model and Accuracy Info (Right side) -->
@@ -361,7 +416,7 @@
                 <div class="chart-container" style="flex: 2; margin-right: 20px;">
                     <img class="trend-chart-image"
                         style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
-                        id="future-trend-chart" src="{{ product['unusual_trend_chart'] }}" alt="Predict Future Trend">
+                        id="unusual-trend-chart" src="{{ product['unusual_trend_chart'] }}" alt="Detect Unusual Trend" onclick="openUnusualModal()">
                 </div>
 
                 <!-- Model and Accuracy Info (Right side) -->
@@ -472,9 +527,15 @@
             <h2>Price Comparison Across States</h2>
             <div class="chart-container">
                 <img style="width: 80%;" id="price-comparison-chart" src="{{ product['price_comparison_chart'] }}"
-                    alt="Price Comparison">
+                    alt="Price Comparison" onclick="openPriceModal()">
             </div>
         </section>
+
+        <!-- Modal for Zoomed Image -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="zoomedImage">
+        </div>
 
         <footer>
             <p class="update-info">Last updated: August 26, 2024</p>
@@ -507,6 +568,38 @@
         document.getElementById('future-trend-chart').onerror = showWarning;
         document.getElementById('unusual-trend-chart').onerror = showWarning;
 
+        // Open the modal
+        function openPredictModal() {
+            var modal = document.getElementById('imageModal');
+            var img = document.getElementById('future-trend-chart');
+            var modalImg = document.getElementById('zoomedImage');
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Open the modal
+        function openUnusualModal() {
+            var modal = document.getElementById('imageModal');
+            var img = document.getElementById('unusual-trend-chart');
+            var modalImg = document.getElementById('zoomedImage');
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Open the modal
+        function openPriceModal() {
+            var modal = document.getElementById('imageModal');
+            var img = document.getElementById('price-comparison-chart');
+            var modalImg = document.getElementById('zoomedImage');
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        // Close the modal
+        function closeModal() {
+            var modal = document.getElementById('imageModal');
+            modal.style.display = "none";
+        }
     </script>
 </body>
 
