@@ -1,17 +1,17 @@
 item_name,state,best_model,best_model_rmse,best_model_accuracy
-"F&N OREN (TIN),325 ml",Johor,random_forest,0.03056103359023319,98.58%
-"F&N OREN (TIN),325 ml",Kedah,random_forest,0.013270015982589277,98.99%
-"F&N OREN (TIN),325 ml",Kelantan,random_forest,0.0209806949047313,98.22%
-"F&N OREN (TIN),325 ml",Melaka,random_forest,0.016454206735761305,98.73%
-"F&N OREN (TIN),325 ml",Negeri Sembilan,linear_regression,0.01479109133595718,99.18%
-"F&N OREN (TIN),325 ml",Pahang,random_forest,0.011928399571011642,99.37%
-"F&N OREN (TIN),325 ml",Perak,random_forest,0.009239203116445745,99.50%
-"F&N OREN (TIN),325 ml",Perlis,random_forest,0.02199895650483418,98.56%
-"F&N OREN (TIN),325 ml",Pulau Pinang,random_forest,0.02329280993487477,98.40%
-"F&N OREN (TIN),325 ml",Sabah,linear_regression,0.017814676242207096,99.18%
-"F&N OREN (TIN),325 ml",Sarawak,random_forest,0.01130583957594685,99.23%
-"F&N OREN (TIN),325 ml",Selangor,random_forest,0.02012797719669963,98.83%
-"F&N OREN (TIN),325 ml",Terengganu,random_forest,0.02270710475971117,98.16%
-"F&N OREN (TIN),325 ml",W.P. Kuala Lumpur,random_forest,0.009159253813969457,99.44%
-"F&N OREN (TIN),325 ml",W.P. Labuan,random_forest,0.02156490035473636,98.67%
-"F&N OREN (TIN),325 ml",W.P. Putrajaya,random_forest,0.022251855932757192,98.92%
+"F&N OREN (TIN),325 ml",Johor,XGBoost,0.031620497823116676,98.62%
+"F&N OREN (TIN),325 ml",Kedah,Random Forest,0.013848744107434472,99.06%
+"F&N OREN (TIN),325 ml",Kelantan,XGBoost,0.030325605272570836,98.66%
+"F&N OREN (TIN),325 ml",Melaka,Random Forest,0.03192350971566206,98.13%
+"F&N OREN (TIN),325 ml",Negeri Sembilan,Linear Regression,0.021497171491364635,98.56%
+"F&N OREN (TIN),325 ml",Pahang,Random Forest,0.007414025550611091,99.52%
+"F&N OREN (TIN),325 ml",Perak,Random Forest,0.010435250448904006,99.45%
+"F&N OREN (TIN),325 ml",Perlis,Random Forest,0.027728300539225204,98.50%
+"F&N OREN (TIN),325 ml",Pulau Pinang,Random Forest,0.014172613706275119,98.93%
+"F&N OREN (TIN),325 ml",Sabah,Linear Regression,0.01673952857332823,99.26%
+"F&N OREN (TIN),325 ml",Sarawak,Random Forest,0.012555490975890373,99.08%
+"F&N OREN (TIN),325 ml",Selangor,Random Forest,0.03384722518071376,98.48%
+"F&N OREN (TIN),325 ml",Terengganu,Random Forest,0.01605223153876039,98.62%
+"F&N OREN (TIN),325 ml",W.P. Kuala Lumpur,Random Forest,0.016720839337180597,99.21%
+"F&N OREN (TIN),325 ml",W.P. Labuan,XGBoost,0.022238181273783502,98.82%
+"F&N OREN (TIN),325 ml",W.P. Putrajaya,Random Forest,0.014079269054609704,99.12%
