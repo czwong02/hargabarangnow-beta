@@ -390,11 +390,17 @@
                         <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
                             product['future_trend_chart_model'] }}</span>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" style="margin-bottom: 15px;">
                         <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
                         <strong style="font-size: 1.2em; margin-left: 10px;">Accuracy:</strong>
                         <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
                             product['future_trend_chart_accuracy'] }}</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">RMSE:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
+                            product['future_trend_chart_rmse'] | float }}</span>
                     </div>
                 </div>
                 {% else %}
@@ -429,11 +435,17 @@
                         <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
                             product['unusual_trend_chart_model'] }}</span>
                     </div>
-                    <div class="info-item">
+                    <div class="info-item" style="margin-bottom: 15px;">
                         <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
                         <strong style="font-size: 1.2em; margin-left: 10px;">Accuracy:</strong>
                         <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
                             product['unusual_trend_chart_accuracy'] | float | round(2) }}%</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">RMSE:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
+                            1-(product['unusual_trend_chart_accuracy'] | float)/100 }}</span>
                     </div>
                 </div>
                 {% else %}
