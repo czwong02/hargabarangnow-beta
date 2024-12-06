@@ -1,17 +1,17 @@
 item_name,state,best_model,best_model_rmse,best_model_accuracy
-TOMATO,Johor,Linear Regression,0.9920158815662807,66.74%
-TOMATO,Kedah,Linear Regression,0.8854748219197227,73.61%
-TOMATO,Kelantan,Linear Regression,0.9020157852453656,72.41%
-TOMATO,Melaka,Linear Regression,0.9613592296411075,68.69%
-TOMATO,Negeri Sembilan,Linear Regression,0.9033776734017533,68.22%
-TOMATO,Pahang,Linear Regression,1.0510024305658705,62.06%
-TOMATO,Perak,Linear Regression,0.9761533195674671,69.32%
-TOMATO,Perlis,Linear Regression,0.7432790948401339,78.04%
-TOMATO,Pulau Pinang,Linear Regression,0.9137273470530225,71.95%
-TOMATO,Sabah,Random Forest,0.5136910541160522,91.98%
-TOMATO,Sarawak,Random Forest,0.4610466948628019,93.77%
-TOMATO,Selangor,Linear Regression,0.9293784474454495,68.76%
-TOMATO,Terengganu,Linear Regression,0.9749005756053336,68.80%
-TOMATO,W.P. Kuala Lumpur,Linear Regression,0.8561324414021105,71.90%
-TOMATO,W.P. Labuan,Random Forest,0.8869636406482801,84.44%
-TOMATO,W.P. Putrajaya,Linear Regression,0.7844690633453996,75.28%
+TOMATO,Johor,Random Forest,1.2216570793536787,70.99%
+TOMATO,Kedah,Random Forest,1.0822607606751837,76.38%
+TOMATO,Kelantan,Random Forest,1.0472958584552632,75.68%
+TOMATO,Melaka,Random Forest,1.1623878312031712,74.06%
+TOMATO,Negeri Sembilan,Random Forest,1.1447290829505568,72.80%
+TOMATO,Pahang,Random Forest,1.319173885570358,69.36%
+TOMATO,Perak,Random Forest,1.1314458016545157,74.02%
+TOMATO,Perlis,Random Forest,1.0143706074383598,79.82%
+TOMATO,Pulau Pinang,Random Forest,1.125024666217155,74.51%
+TOMATO,Sabah,Random Forest,0.3206862101790932,95.54%
+TOMATO,Sarawak,Random Forest,0.5434723142100768,93.17%
+TOMATO,Selangor,Random Forest,1.195278991944893,71.38%
+TOMATO,Terengganu,Random Forest,1.194237689050491,73.50%
+TOMATO,W.P. Kuala Lumpur,Random Forest,1.1077292785579,73.47%
+TOMATO,W.P. Labuan,Random Forest,0.36501286452910264,94.86%
+TOMATO,W.P. Putrajaya,Random Forest,1.1344317372620374,75.99%

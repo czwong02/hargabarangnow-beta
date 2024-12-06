@@ -1,17 +1,17 @@
 item_name,state,best_model,best_model_rmse,best_model_accuracy
-TELUR MASIN (1 biji),Johor,Random Forest,0.017118903917066296,98.67%
-TELUR MASIN (1 biji),Kedah,XGBoost,0.007620768770086263,99.47%
-TELUR MASIN (1 biji),Kelantan,Random Forest,0.00988746009435205,98.91%
-TELUR MASIN (1 biji),Melaka,Random Forest,0.007613406748438921,99.49%
-TELUR MASIN (1 biji),Negeri Sembilan,Random Forest,0.01745994339245887,99.01%
-TELUR MASIN (1 biji),Pahang,Random Forest,0.01630787707248541,98.44%
-TELUR MASIN (1 biji),Perak,Random Forest,0.01667813575663953,98.75%
-TELUR MASIN (1 biji),Perlis,Random Forest,0.017911207975565866,98.47%
-TELUR MASIN (1 biji),Pulau Pinang,Random Forest,0.011339336568832604,99.35%
-TELUR MASIN (1 biji),Sabah,XGBoost,0.007856516273001869,99.52%
-TELUR MASIN (1 biji),Sarawak,Random Forest,0.010162048969250345,99.16%
-TELUR MASIN (1 biji),Selangor,XGBoost,0.012725241405200614,99.35%
-TELUR MASIN (1 biji),Terengganu,Random Forest,0.01243730548429064,99.01%
-TELUR MASIN (1 biji),W.P. Kuala Lumpur,Random Forest,0.015987133809115314,99.02%
+TELUR MASIN (1 biji),Johor,Random Forest,0.012800182832192095,98.83%
+TELUR MASIN (1 biji),Kedah,Random Forest,0.004246744947987897,99.54%
+TELUR MASIN (1 biji),Kelantan,Random Forest,0.007588345592495198,99.49%
+TELUR MASIN (1 biji),Melaka,Random Forest,0.005218804815169816,99.40%
+TELUR MASIN (1 biji),Negeri Sembilan,Random Forest,0.012732907047325189,99.14%
+TELUR MASIN (1 biji),Pahang,Random Forest,0.014302617327597874,98.59%
+TELUR MASIN (1 biji),Perak,Random Forest,0.011821334875005593,99.02%
+TELUR MASIN (1 biji),Perlis,Random Forest,0.012733567183555198,98.92%
+TELUR MASIN (1 biji),Pulau Pinang,Random Forest,0.006868458076937926,99.38%
+TELUR MASIN (1 biji),Sabah,XGBoost,0.007357837311118415,99.65%
+TELUR MASIN (1 biji),Sarawak,Random Forest,0.0084435609350218,99.38%
+TELUR MASIN (1 biji),Selangor,Random Forest,0.00866817187337691,99.54%
+TELUR MASIN (1 biji),Terengganu,Random Forest,0.012631841032472686,98.98%
+TELUR MASIN (1 biji),W.P. Kuala Lumpur,Random Forest,0.016824743624879106,98.86%
 TELUR MASIN (1 biji),W.P. Labuan,Linear Regression,0.5999999999999988,83.04%
-TELUR MASIN (1 biji),W.P. Putrajaya,Random Forest,0.04324358800429708,96.96%
+TELUR MASIN (1 biji),W.P. Putrajaya,Random Forest,0.02465640712601406,98.41%

@@ -1,17 +1,17 @@
 item_name,state,best_model,best_model_rmse,best_model_accuracy
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Johor,Linear Regression,0.5497731022874218,98.10%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Kedah,Random Forest,0.8900645495444921,97.06%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Kelantan,Random Forest,0.381698579635583,98.58%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Melaka,XGBoost,1.28444083655054,97.43%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Negeri Sembilan,SVR,0.7051049677126559,97.71%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Pahang,Random Forest,0.9282063811950598,97.73%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Perak,SVR,0.42320910134839407,97.83%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Perlis,Linear Regression,0.4129911410338322,97.32%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Pulau Pinang,XGBoost,0.4073527934927768,98.81%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Sabah,XGBoost,0.9145701378074954,95.88%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Sarawak,SVR,0.5610838215825374,96.97%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Selangor,SVR,0.5095253074684379,98.62%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Terengganu,Random Forest,0.9738088905738624,97.83%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),W.P. Kuala Lumpur,XGBoost,0.7451277241366102,98.45%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),W.P. Labuan,XGBoost,0.8489839882525048,95.80%
-SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),W.P. Putrajaya,SVR,0.7450053365573246,98.35%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Johor,SVR,0.4809683987354986,98.04%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Kedah,Random Forest,1.1297163633089728,94.93%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Kelantan,Random Forest,0.44222976622756394,98.30%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Melaka,SVR,0.9985983352600065,96.47%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Negeri Sembilan,SVR,0.6209527209363009,97.66%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Pahang,Random Forest,1.0477445761125141,97.42%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Perak,SVR,0.3470319481929914,98.45%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Perlis,SVR,0.45862924839124175,97.71%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Pulau Pinang,Random Forest,0.5606405809418348,98.10%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Sabah,XGBoost,1.2584765526530188,94.37%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Sarawak,Random Forest,0.7070277010179733,96.66%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Selangor,XGBoost,0.35349086416006315,99.15%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),Terengganu,SVR,1.4471101640320292,95.84%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),W.P. Kuala Lumpur,Random Forest,0.6277917843751144,98.50%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),W.P. Labuan,Random Forest,1.880553695565458,89.29%
+SOTONG (Lebih atau samadengan 6 EKOR SEKILOGRAM),W.P. Putrajaya,Linear Regression,0.5200016466104788,97.34%
