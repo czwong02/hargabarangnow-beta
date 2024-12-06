@@ -435,6 +435,18 @@
                         <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
                             product['unusual_trend_chart_model'] }}</span>
                     </div>
+                    {% if product['unusual_trend_chart_accuracy'] == 100 %}
+                    <div class="info-item" style="margin-bottom: 15px;">
+                        <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">Accuracy:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">>99.99%</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
+                        <strong style="font-size: 1.2em; margin-left: 10px;">RMSE:</strong>
+                        <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;"><0.0001</span>
+                    </div>
+                    {% else %}
                     <div class="info-item" style="margin-bottom: 15px;">
                         <i class="fas fa-percentage" style="color: #28a745; font-size: 1.2em;"></i>
                         <strong style="font-size: 1.2em; margin-left: 10px;">Accuracy:</strong>
@@ -447,6 +459,7 @@
                         <span style="display: block; margin-left: 30px; font-size: 1.1em; color: #333;">{{
                             1-(product['unusual_trend_chart_accuracy'] | float)/100 }}</span>
                     </div>
+                    {% endif %}
                 </div>
                 {% else %}
                 <div class="model-accuracy-info"
