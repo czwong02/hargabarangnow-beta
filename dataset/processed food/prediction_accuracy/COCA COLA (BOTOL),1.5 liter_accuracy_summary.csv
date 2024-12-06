@@ -1,1 +1,17 @@
-
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"COCA COLA (BOTOL),1.5 liter",Johor,Random Forest,0.058291599685802074,98.48%
+"COCA COLA (BOTOL),1.5 liter",Kedah,Linear Regression,0.12623839372734036,96.33%
+"COCA COLA (BOTOL),1.5 liter",Kelantan,Linear Regression,0.09705662851249379,96.39%
+"COCA COLA (BOTOL),1.5 liter",Melaka,SVR,0.09978256813364435,97.48%
+"COCA COLA (BOTOL),1.5 liter",Negeri Sembilan,Random Forest,0.13354198307948711,96.58%
+"COCA COLA (BOTOL),1.5 liter",Pahang,Random Forest,0.09447475013756548,97.78%
+"COCA COLA (BOTOL),1.5 liter",Perak,Random Forest,0.09737568965808273,97.41%
+"COCA COLA (BOTOL),1.5 liter",Perlis,Random Forest,0.03339614963474478,99.22%
+"COCA COLA (BOTOL),1.5 liter",Pulau Pinang,Random Forest,0.09607138484111344,97.78%
+"COCA COLA (BOTOL),1.5 liter",Sabah,Random Forest,0.01492177304567841,99.58%
+"COCA COLA (BOTOL),1.5 liter",Sarawak,Linear Regression,0.03262588343092644,99.04%
+"COCA COLA (BOTOL),1.5 liter",Selangor,Random Forest,0.09093285287114705,97.13%
+"COCA COLA (BOTOL),1.5 liter",Terengganu,Linear Regression,7.728598578516755,85.95%
+"COCA COLA (BOTOL),1.5 liter",W.P. Kuala Lumpur,Random Forest,0.06108076668406436,98.49%
+"COCA COLA (BOTOL),1.5 liter",W.P. Labuan,XGBoost,0.008246949396712732,99.84%
+"COCA COLA (BOTOL),1.5 liter",W.P. Putrajaya,Random Forest,0.09710885373550804,97.89%

@@ -1,1 +1,17 @@
-
+item_name,state,best_model,best_model_rmse,best_model_accuracy
+"F&N OREN (BOTOL),1.5 liter",Johor,Random Forest,0.042212823928873204,98.47%
+"F&N OREN (BOTOL),1.5 liter",Kedah,Random Forest,0.09617840846205865,97.81%
+"F&N OREN (BOTOL),1.5 liter",Kelantan,XGBoost,0.082319408504063,98.50%
+"F&N OREN (BOTOL),1.5 liter",Melaka,Random Forest,0.07229242359064185,97.08%
+"F&N OREN (BOTOL),1.5 liter",Negeri Sembilan,XGBoost,0.11754616774924725,97.53%
+"F&N OREN (BOTOL),1.5 liter",Pahang,Random Forest,0.1105585809621872,96.91%
+"F&N OREN (BOTOL),1.5 liter",Perak,Random Forest,0.0978114698678692,96.99%
+"F&N OREN (BOTOL),1.5 liter",Perlis,Linear Regression,0.222975780111689,91.97%
+"F&N OREN (BOTOL),1.5 liter",Pulau Pinang,Random Forest,0.06628394537028018,98.10%
+"F&N OREN (BOTOL),1.5 liter",Sabah,Random Forest,0.009788940177103016,99.80%
+"F&N OREN (BOTOL),1.5 liter",Sarawak,Random Forest,0.02798257655594357,99.21%
+"F&N OREN (BOTOL),1.5 liter",Selangor,Random Forest,0.09154857368411758,97.44%
+"F&N OREN (BOTOL),1.5 liter",Terengganu,XGBoost,0.10360325529862173,97.26%
+"F&N OREN (BOTOL),1.5 liter",W.P. Kuala Lumpur,XGBoost,0.08747030824476343,98.26%
+"F&N OREN (BOTOL),1.5 liter",W.P. Labuan,Random Forest,0.01438568411560648,99.72%
+"F&N OREN (BOTOL),1.5 liter",W.P. Putrajaya,XGBoost,0.06766222745522785,98.36%
